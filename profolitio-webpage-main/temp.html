@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth; /* Enables basic smooth scrolling */
+        }
+
+        body {
+            font-family: 'Arial', sans-serif; /* Consistent font */
+            background-color: #1e1e2f; /* Darker background for better contrast */
+            color: #e4e4e4; /* Light text for readability */
+            line-height: 1.8; /* Improved line spacing for readability */
+        }
+
+        .content-container {
+            width: 80%;
+            margin: 20px auto;
+            height: auto;
+        }
+
+        nav {
+            background: repeating-radial-gradient(
+        circle, 
+        #0663c7 0.01%, 
+        #0c5eb6 .1%, 
+        #1b50ba .3%, 
+        #142b58 100%
+   
+        );
+            color: white;
+            padding: 10px 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow for depth */
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-start; /* Align items to the left */
+            gap: 20px; /* Add spacing between the links */
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li:first-child {
+            margin-right: auto; /* Push all other links to the right */
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            font-weight: bold;
+            transition: all 0.3s ease-in-out;
+        }
+
+        nav ul li a:hover {
+            background-color: #0426499d;
+            color: #fff;
+            border-radius: 5px;
+            transform: scale(1.1);
+        }
+
+        section {
+             /* Adjust this value to match the height of your nav */
+            background-color: #2a2a3b; /* Slightly lighter background for sections */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Slightly stronger shadow for contrast */
+            padding: 20px;
+            
+            
+            transition: all 0.3s ease-in-out;
+            background-color: #07132b64;
+        }
+
+        section:hover {
+             transform: translateY(0px); 
+            
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* Stronger shadow on hover */
+           
+        }
+
+        h1 {
+   text-align: center; /* Ensure all headings are centered */
+    font-size: 1.9rem; /* Ensure consistent font size */
+    color: #4a90e2; /* Matches the nav gradient */
+    font-weight: 600; /* Consistent font weight */
+}
+
+h1:first-of-type {
+    margin: 20px 0 30px 0; /* Top and bottom margins for the first <h1> */
+}
+
+h1:not(:first-of-type) {
+    margin: 30px 0 20px 0; /* Only bottom margin for the rest */
+}
+
+
+        p {
+            text-align: justify;
+            font-size: 1.1rem; /* Slightly larger font size for readability */
+            color: #d4d4d4; /* Softer light text for readability */
+            margin: 5px 0;
+            padding: 0 5%; /* Add padding to the sides for better spacing */
+            line-height: 1.8;
+        }
+
+        #about-me {
+            display: flex; /* Use flexbox for layout */
+            align-items: center; /* Vertically align items */
+            gap: 20px; /* Add spacing between image and text */
+              border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+            padding: 20px; /* Add padding inside the section */
+            margin: 20px 0; /* Add spacing between sections */
+            transition: all 0.3s ease-in-out;
+            background-color: #07132b64;
+           
+        }
+
+        #about-me {
+    scroll-margin-top: 130px; /* Adjust this value to match the height of your nav */
+}
+#contact {
+    scroll-margin-top: 10px;
+}
+#projects {
+    scroll-margin-top: 125px;
+}
+
+        img {
+            border-radius: 50%; /* Circular image */
+            width: 150px; /* Adjust size */
+            height: 200px;
+            
+             border: 3.2px     #4a90e2; 
+             border-style:  outset inset outset inset;
+          
+            flex-shrink: 0; /* Prevent the image from shrinking */
+        }
+        #contact img {
+            width: 60px; /* Adjust size */
+            height: 60px; /* Adjust size */
+            border-radius: 50%; /* Circular image */
+            border: 1.9px solid #4a90e2; /* Border color and style */
+            flex-shrink: 0; /* Prevent the image from shrinking */
+        }
+        #projects img {
+            width: 150px; /* Adjust size */
+            height: 150px; /* Adjust size */
+            border-radius: 5%; /* Circular image */
+            border: 3.2px solid #4a90e2; /* Border color and style */
+            flex-shrink: 0; /* Prevent the image from shrinking */
+        }
+
+        #about-me div {
+            flex: 1; /* Allow the text container to take up remaining space */
+            display: flex; /* Use flexbox for the inner div */
+            flex-direction: column; /* Stack content vertically */
+            justify-content: center; /* Center content vertically */
+        }
+
+        /* #about-me h1 {
+            text-align: left; // Align heading to the left 
+            font-size: 2rem;
+            color: #4a90e2; // Matches the nav gradient 
+            margin-bottom: 10px;
+        } */
+
+        
+        #about-me p {
+            text-align: justify; /* Justify the text for better readability */
+            font-size: 1.1rem;
+            color: #d4d4d4; /* Softer light text for readability */
+            line-height: 1.8;
+        }
+
+        #contact p, #projects p, #customer-service p {
+            text-align: center;
+        }
+
+        #email-card {
+            display: flex;
+            flex-direction: column; /* Stack items vertically */
+            align-items: center; /* Center items horizontally */
+            justify-content: center; /* Center items vertically */
+            background-color: #2a2a3b; /* Slightly lighter background for contrast */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+            padding: 15px 20px;
+            margin: 20px auto; 
+            
+            /* Center horizontally */
+            transition: all 0.3s ease-in-out;
+            width: fit-content;
+        }
+
+        #email-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* Stronger shadow on hover */
+        }
+        
+        #projects  img:hover{
+            transform: translateY(5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* Stronger shadow on hover */
+            transform: scale(1.05);
+        }
+
+        
+
+
+
+        .email-icon img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 10px; /* Add spacing below the icon */
+        }
+
+        .email-text {
+            display: flex;
+            flex-direction: column; /* Stack text and button vertically */
+            align-items: center; /* Center text and button horizontally */
+        }
+
+        .email-text p {
+            margin: 0;
+            font-size: 1.1rem;
+            color: #d4d4d4; /* Softer light text for readability */
+            text-align: center; /* Center the text */
+        }
+
+        .email-text button {
+            margin-top: 10px; /* Add spacing above the button */
+            padding: 5px 10px;
+            background-color: #4a90e2; /* Matches the nav gradient */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .email-text button:hover {
+            background-color: #0056b3;
+        }
+
+        #contact {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centers the content horizontally */
+            justify-content: center; /* Centers the content vertically */
+            text-align: center;
+        }
+       
+        .carousel-container {
+            display: flex;
+            align-items: center; /* Vertically center the carousel */
+        justify-content: center; /* Horizontally center the carousel */
+        
+        width: 100%;
+        margin: 0 auto;
+        overflow: hidden;
+      
+    }
+
+        .carousel {
+            display: flex;
+           
+            overflow: hidden;
+            width: 80%;
+        }
+
+        .card {
+            width: 250px; /* Set a fixed width for all cards */
+            height: 350px; /* Set a fixed height to ensure uniformity */
+            margin-bottom: 10px;
+            margin-right: 60px;
+            background-color: #2a2a3b;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            padding: 15px;
+            display: flex; /* Use flexbox for layout */
+            flex-direction: column; /* Stack content vertically */
+            justify-content: space-between; /* Distribute content evenly */
+            align-items: center; /* Center items horizontally */
+            overflow: hidden; /* Prevent content overflow */
+        }
+
+        .card h2 {
+            color: #4a90e2;
+            margin: 10px 0;
+            font-size: 1.2rem; /* Ensure consistent font size */
+        }
+
+        .card p {
+            color: #d4d4d4;
+            font-size: 1rem;
+            margin-bottom: 10px;
+            overflow: hidden; /* Prevent text overflow */
+            text-overflow: ellipsis; /* Add ellipsis for overflowing text */
+            white-space: normal; /* Allow text to wrap */
+            max-height: 60px; /* Limit the height of the text */
+        }
+
+        .card img {
+            width: 150px; /* Adjust the size of the image */
+            height: 150px; /* Ensure consistent height */
+            border-radius: 10px;
+            object-fit: cover; /* Ensure the image fits within the dimensions */
+            margin: 0 auto; /* Center the image horizontally */
+        }
+
+    a { text-decoration: none;
+      
+        font-weight: bold; /* Make the link text bold */
+        transition: color 0.3s ease-in-out; /* Smooth transition for hover effect */
+    }
+
+     a:hover {
+        translate: 0px 2px; /* Slightly move the link down on hover */
+        color: #0056b3; 
+    }
+
+    
+      #projects  .carousel-container button{
+        
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+       
+        border: none;
+        padding: 20px;
+        margin:10px;
+        cursor: pointer;
+
+        border-radius: 50%;
+        font-size: 1.5rem;
+       
+        
+    }
+
+    .carousel-btn.left {
+        left: 50px;
+    }
+
+    .carousel-btn.right {
+        right: 50px;
+    }
+
+    .carousel-btn:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    @media (max-width: 768px) {
+       
+
+        
+        img {
+        
+        object-fit: cover; /* Ensure the image fits within the dimensions */
+    }
+
+  
+    
+
+    #about-me img {
+        /* width: 120px; 
+        height: 170px; */
+        width: 70px; 
+        height: 120px;
+    }
+
+    #about-me p{
+        margin: 0;
+        margin-right: 1px;
+        padding:3px;
+        padding-right: 1px;
+        font-size: 0.7rem; /* Adjust font size for smaller screens */
+        font-weight: 510;
+    }
+
+    #projects p{
+        font-size: 0.7rem; /* Adjust font size for smaller screens */
+        font-weight: 510;  
+    }
+    h1{
+        font-size: 1.4rem;
+    }
+
+    h2{
+        font-size: 1.1rem;
+    }
+    
+    #contact img {
+        width: 60px; /* Specific size for the contact icon */
+        height: 60px;
+    }
+   
+    .card {
+        transform: scaleX(0.8);
+         /* Make the card take up 90% of the screen width */
+         /* Allow the height to adjust based on content */
+        margin: 15px auto; /* Center the card horizontally and add spacing */
+      padding-left: 0px;
+      margin-left: 0px;
+      
+        /* Adjust padding for smaller screens */
+
+    }
+
+    
+
+    .card img {
+        width: 100%; /* Make the image take up the full width of the card */
+        height: auto; /* Maintain aspect ratio */
+        margin: 0 auto; /* Center the image horizontally */
+    }
+
+    
+    /* .card img {
+        width: 100%; 
+          height: auto;
+    } */
+
+    }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#about-me">About Me</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <!-- <li><a href="#customer-service">Customer Service</a></li> -->
+        </ul>
+    </nav>
+
+    <div class="content-container">
+
+        <h1>Who Am I</h1>
+        <section class="about-me" id="about-me">
+            <img src="me.jpg" alt="Profile Picture">
+            <div>
+                <p>
+                    Hi, I'm <strong>Ahmed Hani</strong><br>
+                    <em>Undergraduate Student at Al-Quds Open University.</em>
+                </p>
+                <p>
+                    I'm an aspiring <strong>software developer</strong> with a strong passion for 
+                    <strong>technology</strong>, <strong>coding</strong>, and <strong>creative problem-solving</strong>. 
+                    Currently pursuing my degree in <strong>Information Technology</strong>, I’m constantly driven by a desire to 
+                    <em>learn</em>, <em>build</em>, and <em>grow</em> in the world of <strong>software engineering</strong>.
+                </p>
+                <p>
+                    This website conatins a collection of my <strong>personal projects</strong> and technical explorations. 
+                    Each project showcases my dedication to writing <strong>clean code</strong>, building 
+                    <strong>functional applications</strong>, and mastering the fundamentals of 
+                    <strong>programming</strong> and <strong>web development</strong>.
+                </p>
+                <p>
+                    <strong>Feel free to browse through my work</strong>—and if you’re interested in 
+                    <strong>collaborating</strong>, have any <strong>questions</strong>, or just want to 
+                    <strong>connect</strong>, don’t hesitate to <em>reach me out</em>!
+                </p>
+                
+                
+            </div>
+        </section>
+    
+        
+        <h1>Projects</h1>
+        <section id="projects">
+            
+            <div class="carousel-container">
+                <button class="carousel-btn left" onclick="slideLeft()">&#10094;</button>
+                <div class="carousel">
+
+                <a href="https://ahmed-abusweireh.github.io/mini-_supermarket_app/" target="_blank">
+                    <div class="card">
+                        <h2>Supermarket System UI</h2>
+                        <p>A Cashier user-friendly system for creating, retrieving, editing, and deleting receipts.</p>
+                        <img src="supermarket.png" alt="Supermarket Project">
+                    </div>
+                </a>
+
+                <a href="https://github.com/retenuphilistia13/Prime_Finder" target="_blank">
+                    <div class="card">
+                        <h2>Prime Finder Application</h2>
+                        <p>A smart console app to check primes written in C++, list smaller primes, and find prime sums.</p>
+                        <img src="prime_finder.png" alt="Prime Finder Console Application">
+                    </div>
+                </a>
+
+                <a href="https://retenuphilistia13.github.io/counting_and_shape_for_kids/" target="_blank">
+                    <div class="card">
+                        <h2>Toddler Count Game</h2>
+                        <p>Simple webpage for toddlers to learn, count numbers, and have fun.</p>
+                        <img src="counting_toddlers.png" alt="Toddler Game Website">
+                    </div>
+                </a>
+
+                </div>
+                <button class="carousel-btn right" onclick="slideRight()">&#10095;</button>
+            </div>
+        </section>
+
+        <h1>Contact</h1> 
+        <section id="contact">
+               
+            <p>Feel free to reach out to me through email provided below</p>
+            <div id="email-card">
+                <div class="email-icon">
+                    <img src="email_icon.png" alt="Email Icon">
+                </div>
+                <div class="email-text">
+                    <p id="business-email">ahmedabusweireh@outlook.com</p>
+                    <button onclick="copyEmail()">Copy Email</button>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        function copyEmail() {
+            const email = document.getElementById("business-email").textContent;
+            navigator.clipboard.writeText(email).then(() => {
+                // alert("Email copied to clipboard!");
+            }).catch(err => {
+                console.error("Failed to copy email: ", err);
+            });
+        }
+
+    let currentIndex = 0;
+
+    function slideLeft() {
+        const carousel = document.querySelector('.carousel');
+        const cards = document.querySelectorAll('.card');
+        const cardWidth = cards[0].offsetWidth + 20; // Include margin
+
+        // Calculate the expected scroll position
+        const expectedScrollLeft = (currentIndex - 1) * cardWidth;
+
+        // Check if the carousel can scroll further
+        if (currentIndex > 0) {
+            const currentScrollLeft = carousel.scrollLeft;
+            const scrollDifference = Math.abs(expectedScrollLeft - currentScrollLeft);
+
+            // If the scroll difference is small, skip to the previous-previous card
+            if (scrollDifference < cardWidth / 2) {
+                currentIndex = Math.max(currentIndex - 2, 0); // Decrement index by 2
+            } else {
+                currentIndex = Math.max(currentIndex - 1, 0); // Decrement index by 1
+            }
+
+            carousel.scrollTo({
+                left: currentIndex * cardWidth,
+                behavior: 'smooth'
+            });
+        }
+    }
+
+    function slideRight() {
+        const carousel = document.querySelector('.carousel');
+        const cards = document.querySelectorAll('.card');
+        const cardWidth = cards[0].offsetWidth + 20; // Include margin
+        const maxIndex = cards.length - 1; // Prevent scrolling past the last card
+
+        // Calculate the expected scroll position
+        const expectedScrollLeft = (currentIndex + 1) * cardWidth;
+
+        // Check if the carousel can scroll further
+        if (currentIndex < maxIndex) {
+            const currentScrollLeft = carousel.scrollLeft;
+            const scrollDifference = Math.abs(expectedScrollLeft - currentScrollLeft);
+
+            // If the scroll difference is small, skip to the next-next card
+            if (scrollDifference < cardWidth / 2) {
+                currentIndex = Math.min(currentIndex + 2, maxIndex); // Increment index by 2
+            } else {
+                currentIndex = Math.min(currentIndex + 1, maxIndex); // Increment index by 1
+            }
+
+            carousel.scrollTo({
+                left: currentIndex * cardWidth,
+                behavior: 'smooth'
+            });
+        }
+    }
+
+    let scrollSpeed = 1.7; // Normal scroll speed
+    let isScrolling = false;
+
+    window.addEventListener("wheel", function(event) {
+        event.preventDefault();
+
+        let currentScroll = window.scrollY; // Get current scroll position
+        let adjustedSpeed = scrollSpeed;
+
+        // If user is near the top (less than 50px), reduce first scroll impact
+        if (currentScroll < 70) {
+            adjustedSpeed = 0.5; // Reduce the first scroll effect
+        }
+
+        if (!isScrolling) {
+            isScrolling = true;
+            requestAnimationFrame(() => {
+                window.scrollBy({
+                    top: event.deltaY * adjustedSpeed,
+                    behavior: "smooth"
+                });
+                isScrolling = false;
+            });
+        }
+    }, { passive: false });
+
+    </script>
+</body>
+</html>

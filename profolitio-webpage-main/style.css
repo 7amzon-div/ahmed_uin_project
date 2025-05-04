@@ -1,0 +1,696 @@
+@import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&display=swap');
+
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Alexandria", sans-serif;
+}
+
+*::selection{
+    background-color: rgb(0, 255, 157);
+    color: black;
+}
+
+.me{
+    direction: rtl;
+}
+
+i{
+    font-size: 70px;
+}
+
+.fa-arrow-right,.fa-arrow-left{
+    font-size: 35px;
+}
+
+html {
+    scroll-behavior: smooth;
+    /* Enables basic smooth scrolling */
+}
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    /* Consistent font */
+    background-color: #1e1e2f;
+    /* Darker background for better contrast */
+    color: #e4e4e4;
+    /* Light text for readability */
+    line-height: 1.8;
+    /* Improved line spacing for readability */
+}
+
+
+
+.content-container {
+    width: 100%;
+    padding: 0px 100px;
+}
+
+nav {
+    /* background: repeating-radial-gradient(circle,
+            #0663c7 0.01%,
+            #0c5eb6 .1%,
+            #1b50ba .3%,
+            #142b58 100%); */
+            background-color: #07132be7;
+    color: white;
+    padding: 10px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    /* Slightly stronger shadow for depth */
+    position: sticky;
+    top: 0;
+    bottom: 50px;
+    z-index: 1000;
+
+}
+
+
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    /* Align items to the left */
+    gap: 20px;
+    /* Add spacing between the links */
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li:first-child {
+    margin-right: auto;
+    /* Push all other links to the right */
+}
+
+nav ul li a {
+    color: rgb(0, 255, 157);
+    text-decoration: none;
+    padding: 8px 15px;
+    font-weight:700;
+    transition: all 0.3s ease-in-out;
+    letter-spacing: 1px;
+    font-size: 18px;
+}
+
+nav ul li a:hover {
+    background-color: #0426499d;
+    color: #fff;
+    border-radius: 5px;
+    transform: scale(1.1);
+}
+
+section {
+    /* Adjust this value to match the height of your nav */
+    background-color: #2a2a3b;
+    /* Slightly lighter background for sections */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    /* Slightly stronger shadow for contrast */
+    padding: 20px;
+
+
+    transition: all 0.3s ease-in-out;
+    background-color: #07132b64;
+}
+
+section:hover {
+    transform: translateY(0px);
+
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+    /* Stronger shadow on hover */
+
+}
+
+.card h2 {
+    color: rgb(0, 255, 157);
+    margin: 10px 0;
+    font-size: 1.2rem;
+    /* Ensure consistent font size */
+}
+
+h1 {
+    text-align: center;
+    /* Ensure all headings are centered */
+    font-size: 1.9rem;
+    /* Ensure consistent font size */
+    color: rgb(0, 255, 157);
+    /* Matches the nav gradient */
+    font-weight: 600;
+    /* Consistent font weight */
+}
+
+h1:first-of-type {
+    margin: 20px 0 30px 0;
+    /* Top and bottom margins for the first <h1> */
+}
+
+h1:not(:first-of-type) {
+    margin: 30px 0 20px 0;
+    /* Only bottom margin for the rest */
+}
+
+
+p {
+    text-align: justify;
+    font-size: 1.1rem;
+    /* Slightly larger font size for readability */
+    color: #d4d4d4;
+    /* Softer light text for readability */
+    margin: 5px 0;
+    padding: 0 5%;
+    /* Add padding to the sides for better spacing */
+    line-height: 1.8;
+}
+
+#about-me {
+    display: flex;
+    /* Use flexbox for layout */
+    align-items: center;
+    /* Vertically align items */
+    gap: 20px;
+    /* Add spacing between image and text */
+    border-radius: 10px;
+    /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    /* Subtle shadow for depth */
+    padding: 20px;
+    /* Add padding inside the section */
+    margin: 20px 0;
+    /* Add spacing between sections */
+    transition: all 0.3s ease-in-out;
+    /* background-color: #07132b64; */
+    background-image: url(/image/code_2.jpg);
+    /*https://c4.wallpaperflare.com/wallpaper/620/81/253/pattern-design-dark--wallpaper-thumb.jpg  */
+    scroll-margin-top: 130px;
+    background-position: center;
+    background-size:cover ;
+    /* Adjust this value to match the height of your nav */
+}
+
+
+
+#projects {
+    scroll-margin-top: 125px;
+}
+
+.three-D-card{
+    transform: rotate(-12deg);
+    box-shadow: -13px 6px 0px 5px rgb(0, 255, 157);
+}
+
+.img-container{
+    width:350px;
+    height: 100%;
+    display: flex;
+    border-radius:10px;
+    overflow: hidden;
+    margin-left: 60px;
+    border: black solid 3px;
+}
+
+img {
+    /* Circular image */
+    width: 100%;
+    border-radius: 10px;
+    /* Adjust size */
+    height: 100%;
+    border: none;
+    /* Prevent the image from shrinking */
+}
+
+#contact img {
+    width: 60px;
+    /* Adjust size */
+    height: 60px;
+    /* Adjust size */
+    border-radius: 50%;
+    /* Circular image */
+    border: 1.9px solid #4a90e2;
+    /* Border color and style */
+    flex-shrink: 0;
+    /* Prevent the image from shrinking */
+}
+
+#contact p{
+    text-align: center;
+}
+
+#projects img {
+    width: 150px;
+    /* Adjust size */
+    height: 150px;
+    /* Adjust size */
+    border-radius: 5%;
+    /* Circular image */
+    border: 3.2px solid #4a90e2;
+    /* Border color and style */
+}
+
+
+
+/* #about-me h1 {
+            text-align: left; // Align heading to the left 
+            font-size: 2rem;
+            color: #4a90e2; // Matches the nav gradient 
+            margin-bottom: 10px;
+        } */
+
+
+#about-me p {
+    /* Justify the text for better readability */
+    font-size: 1em;
+    font-weight: 600;
+    font-style: normal;
+    color: #ffffff;
+    /* Softer light text for readability */
+    line-height: 2.5;
+    text-align: right;
+}
+
+#contact p,
+#projects p{
+    text-align: center;
+    direction: rtl;
+}
+
+#email-card {
+    display: flex;
+    flex-direction: column;
+    /* Stack items vertically */
+    align-items: center;
+    /* Center items horizontally */
+    justify-content: center;
+    /* Center items vertically */
+    background-color: #2a2a3b;
+    /* Slightly lighter background for contrast */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    /* Subtle shadow for depth */
+    padding: 15px 20px;
+    margin: 20px auto;
+
+    /* Center horizontally */
+    transition: all 0.3s ease-in-out;
+    width: fit-content;
+}
+
+#email-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+    /* Stronger shadow on hover */
+}
+
+#projects img:hover {
+    transform: translateY(5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+    /* Stronger shadow on hover */
+    transform: scale(1.05);
+}
+
+
+.email-icon img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+    /* Add spacing below the icon */
+}
+
+.email-text {
+    display: flex;
+    flex-direction: column;
+    /* Stack text and button vertically */
+    align-items: center;
+    /* Center text and button horizontally */
+}
+
+.email-text p {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #d4d4d4;
+    /* Softer light text for readability */
+    text-align: center;
+    /* Center the text */
+}
+
+.email-text button {
+    margin-top: 10px;
+    /* Add spacing above the button */
+    padding:8px;
+    width: 100px;
+    background-color: #07132b64;
+    /* Matches the nav gradient */
+    color:  #00ffaa;
+    border: none;
+    border-radius: 5px;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 1em;
+    transition: all 0.3s ease-in-out;
+}
+
+.email-text button:hover {
+    background-color: #ff5100;
+    color: black;
+    cursor: pointer;
+}
+
+#contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Centers the content horizontally */
+    justify-content: center;
+    /* Centers the content vertically */
+    text-align: center;
+}
+
+.carousel-container {
+    display: flex;
+    align-items: center;
+    /* Vertically center the carousel */
+    justify-content: center;
+    /* Horizontally center the carousel */
+    width: 100%;
+}
+
+.carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.card {
+    width: 250px;
+    /* Set a fixed width for all cards */
+    height: 350px;
+    /* Set a fixed height to ensure uniformity */
+    margin-bottom: 10px;
+    margin-right: 60px;
+    background-color: #2a2a3b;
+    border-radius: 10px;
+    text-align: center;
+    padding: 15px;
+    display: flex;
+    /* Use flexbox for layout */
+    flex-direction: column;
+    /* Stack content vertically */
+    justify-content: space-between;
+    /* Distribute content evenly */
+    align-items: center;
+    /* Center items horizontally */
+    overflow: hidden;
+    /* Prevent content overflow */
+}
+
+.card p {
+    color: #d4d4d4;
+    font-size: 0.8em;
+    margin-bottom: 10px;
+    overflow: hidden;
+    /* Prevent text overflow */
+    text-overflow: ellipsis;
+    /* Add ellipsis for overflowing text */
+    white-space: normal;
+    /* Allow text to wrap */
+    max-height: 60px;
+    /* Limit the height of the text */
+    width: 100%;
+}
+
+.card img {
+    width: 150px;
+    /* Adjust the size of the image */
+    height: 150px;
+    /* Ensure consistent height */
+    border-radius: 10px;
+    object-fit: cover;
+    /* Ensure the image fits within the dimensions */
+    margin: 0 auto;
+    /* Center the image horizontally */
+}
+
+a {
+    text-decoration: none;
+
+    font-weight: bold;
+    /* Make the link text bold */
+    transition: color 0.3s ease-in-out;
+    /* Smooth transition for hover effect */
+    transition: ease 0.7s;
+}
+
+a:hover {
+    transform: translateY(-30px);
+}
+
+/* .who-im{
+    background-image: url(https://c4.wallpaperflare.com/wallpaper/158/122/422/anime-anime-boys-jujutsu-kaisen-yuji-itadori-sakuna-hd-wallpaper-thumb.jpg);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+} */
+
+#projects .carousel-container button {
+    background-color: rgba(0, 119, 255, 0.795);
+    border: none;
+    padding: 10px;
+    margin: 10px;
+    width: 70px;
+    cursor: pointer;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8em;
+    margin: 100px;
+    transition: ease 0.5s;
+}
+
+#projects .carousel-container button:hover{
+    background-color: #00ffaa;
+}
+
+
+.carousel-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+
+.aqsa{
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    padding: 15px 10px;
+    flex-wrap:wrap; 
+    justify-content: center;
+    border-radius: 0px;
+    position: relative;
+}
+
+.main-aqsa{
+    position: absolute;
+    color: rgb(32, 30, 30);
+    top: -30px;
+    right: auto;
+    background-color: #00ffaa;
+    border: #0b0b0c 1px solid;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.main-aqsa:hover{
+    transform: none;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+.aqsa-card{
+    width: 250px;
+    height:200px;
+    border-radius: 10px;
+    background:linear-gradient(50deg,rgb(111, 0, 255),rgba(0, 255, 200, 0.568));
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.7s ease;
+    font-size: 0.8em;
+    margin: 3px;
+    text-align: center;
+}
+
+.aqsa-card h3{
+    padding: 10px;
+}
+
+.aqsa-card a{
+    text-decoration: none;
+    display: inline-block;
+    color: #0b0b0c;
+    transform: none;
+    padding: 10px;
+    font-size: 1em;
+    font-weight: 700;
+    width: 100%;
+    background-color: rgb(226, 226, 226);
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.aqsa-card a:hover{
+    background-color: #242726;
+    color: white;
+}
+
+.aqsa-card div{
+    width: 100%;
+    height: 140px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.aqsa-card div img{
+    border-radius: 0px;
+    width: 100%;
+    height: 100%;
+    transition: 0.7s ease;
+}
+
+.aqsa-card:hover  img{
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+
+
+
+    img {
+
+        object-fit: cover;
+        /* Ensure the image fits within the dimensions */
+    }
+
+
+    #about-me img {
+        width: 70px;
+        height: 120px;
+    }
+
+    #about-me p {
+        margin: 0;
+        margin-right: 1px;
+        padding: 3px;
+        padding-right: 1px;
+        font-size: 0.7rem;
+        /* Adjust font size for smaller screens */
+        font-weight: 510;
+    }
+
+    #projects p {
+        font-size: 0.7rem;
+        /* Adjust font size for smaller screens */
+        font-weight: 510;
+    }
+
+    h1 {
+        font-size: 1.4rem;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+    }
+
+    #contact img {
+        width: 60px;
+        /* Specific size for the contact icon */
+        height: 60px;
+    }
+
+    .card {
+        transform: scaleX(0.8);
+        /* Make the card take up 90% of the screen width */
+        /* Allow the height to adjust based on content */
+        margin: 15px auto;
+        /* Center the card horizontally and add spacing */
+        padding-left: 0px;
+        margin-left: 0px;
+
+        /* Adjust padding for smaller screens */
+
+    }
+
+
+
+    .card img {
+        width: 100%;
+        /* Make the image take up the full width of the card */
+        height: auto;
+        /* Maintain aspect ratio */
+        margin: 0 auto;
+        /* Center the image horizontally */
+    }
+
+
+    /* .card img {
+        width: 100%; 
+          height: auto;
+    } */
+
+    .carousel-container {
+        overflow-x: auto;
+        /* Enable horizontal scrolling */
+        display: flex;
+        flex-wrap: nowrap;
+        /* Prevent cards from wrapping to the next line */
+        gap: 15px;
+        /* Add spacing between cards */
+        padding: 10px;
+        /* Add padding around the carousel */
+        scroll-snap-type: x mandatory;
+        /* Enable snap scrolling */
+    }
+
+    .carousel {
+        display: flex;
+        flex-direction: row;
+        /* Ensure cards are in a row */
+        gap: 15px;
+        /* Add spacing between cards */
+        overflow-x: auto;
+        /* Enable horizontal scrolling */
+        scroll-snap-type: x mandatory;
+        /* Enable snap scrolling */
+        -webkit-overflow-scrolling: touch;
+        /* Smooth scrolling for touch devices */
+    }
+
+    .card {
+        flex: 0 0 80%;
+        /* Make each card take up 80% of the screen width */
+        height: auto;
+        /* Allow height to adjust based on content */
+        scroll-snap-align: center;
+        /* Snap each card to the center */
+        margin: 0 auto;
+        /* Center the card horizontally */
+    }
+
+    .carousel-btn {
+        display: none;
+        /* Hide carousel buttons on smaller screens */
+    }
+}
